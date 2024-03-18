@@ -12,7 +12,6 @@ st.write("Omega 3 & Blueberry Oatmeal")
 st.write("Kale, Spinach and Rocket Smoothie")
 st.write("Hard-Boiled Free-Range Egg")
 
-fn.test()
 
 name_on_order = st.text_input('Name on Smoothie')
 st.write('The name on your order will be: ', name_on_order)
