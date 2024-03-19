@@ -2,15 +2,17 @@
 import streamlit as st
 from snowflake.snowpark.functions import col
 
+
+
 # Write directly to the app
 st.title("My Parents New Healthy Diner")
 st.write(
     """Breakfast menu
     """
 )
-st.write("Omega 3 & Blueberry Oatmeal")
-st.write("Kale, Spinach and Rocket Smoothie")
-st.write("Hard-Boiled Free-Range Egg")
+#st.write("Omega 3 & Blueberry Oatmeal")
+#st.write("Kale, Spinach and Rocket Smoothie")
+#st.write("Hard-Boiled Free-Range Egg")
 
 name_on_order = st.text_input('Name on Smoothie')
 st.write('The name on your order will be: ', name_on_order)
@@ -37,3 +39,12 @@ if ingredients_list:
     if time_to_insert:
         session.sql(my_insert_stmt).collect()
         st.success('Your smoothie is ordered')
+
+
+
+#New section to display frutiyvice nutrition information
+import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+st.text(fruityvice_response)
+
+
